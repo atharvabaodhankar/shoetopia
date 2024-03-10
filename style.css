@@ -28,6 +28,62 @@ p{
     background-color: magenta;
 }
 /* Hero */
+  .toggle-bar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .5s;
+    display: none;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+  }
+  
+  #bar2 {
+    transition-duration: .8s;
+  }
+  
+  #bar1,#bar3 {
+    width: 70%;
+  }
+  
+  .toggle-bar.active .bars {
+    position: absolute;
+    transition-duration: .5s;
+  }
+  
+  .toggle-bar.active #bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+  }
+  
+  .toggle-bar.active #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+  }
+  
+  .toggle-bar.active #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+  }
+  
+  .toggle-bar.active {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+  }
+
 nav{
     width: 100%;
     display: flex;
@@ -90,7 +146,7 @@ nav ul li a{
     color: #000;
 }
 #hero{
-    height: 100vh;
+    height: 70vh;
 }
 .swiper-hero{
     width: 100%;
@@ -124,8 +180,67 @@ nav ul li a{
     text-align: center;
     font-size: 18px;
     background: #fff;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     background-color: #00f;
+  }
+  .swiper-slide-text{
+    width: 50%;
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 4rem;
+    text-align: left;
+  }
+  .swiper-slide-text h1{
+    font-size: 5rem;
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    text-transform: uppercase;
+  }
+  .swiper-slide-text p{
+    margin-top: 2rem;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+        nav ul{
+            position: fixed;
+            top: 8rem;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 100;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all .4s ease;
+        }
+        nav ul li{
+            margin: 3.5vh 0;
+        }
+        nav ul li a{
+            font-size: 2rem;
+        }
+        nav.active ul{
+            left: 0;
+        }
+        .toggle-bar{
+            display: inherit;
+        }
+        .swiper-slide-img{
+            width: 100%;
+        }
+        .swiper-slide-text {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            justify-content: flex-end;
+            padding: 4rem;
+        }
   }
