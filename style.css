@@ -27,6 +27,18 @@ p{
     height: 100vh;
     background-color: magenta;
 }
+section{
+    padding: 5rem 0;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.header h1{
+    font-size: 5rem;
+}
 /* Hero */
   .toggle-bar {
     position: relative;
@@ -90,12 +102,14 @@ nav{
     align-items: center;
     justify-content: space-between;
     height: 8rem;
-   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.105);
+   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.192);
     background-color: #fff;
     padding: 0 2.5rem;
     transition: all .4s ease;
     z-index: 100;
+    position: relative;
 }
+
 nav.sticky-bar{
     position: fixed;
     top: 0;
@@ -153,7 +167,6 @@ nav ul li a{
     height: 100%;
 }
 .hero-swiper{
-    background-color: rgb(81, 255, 0);
     width: 100%;
     height: 100%;
 }
@@ -183,7 +196,6 @@ nav ul li a{
     display: flex !important;
     justify-content: center;
     align-items: center;
-    background-color: #00f;
   }
   .swiper-slide-text{
     width: 50%;
@@ -194,15 +206,18 @@ nav ul li a{
     flex-direction: column;
     padding: 0 4rem;
     text-align: left;
+    color: #000;
   }
   .swiper-slide-text h1{
-    font-size: 5rem;
+    font-size: 5vw;
     color: transparent;
-    -webkit-text-stroke: 2px #fff;
+    -webkit-text-stroke: 2px #000;
     text-transform: uppercase;
   }
   .swiper-slide-text p{
     margin-top: 2rem;
+    font-size: 2rem ;
+    line-height: 3.5rem;
   }
   
 
@@ -210,15 +225,16 @@ nav ul li a{
         nav ul{
             position: fixed;
             top: 8rem;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            left: -120%;
+            width: 100vw;
+            height: 100vh;
             background-color: #ffffff;
             z-index: 100;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             transition: all .4s ease;
+            z-index: 120;
         }
         nav ul li{
             margin: 3.5vh 0;
@@ -240,7 +256,13 @@ nav ul li a{
             height: 100%;
             position: absolute;
             bottom: 0;
-            justify-content: flex-end;
+            justify-content: center;
+            color: #ffff;
+            align-items: center;
             padding: 4rem;
         }
+        .swiper-slide-text h1{
+            -webkit-text-stroke: 2px #fff;
+            font-size: 10vw;
+          }
   }

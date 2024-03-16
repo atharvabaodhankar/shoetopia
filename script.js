@@ -26,7 +26,7 @@ window.addEventListener('scroll', function () {
 
 var swiper = new Swiper(".hero-swiper", {
     autoplay: {
-        enabled: false,
+        enabled: true,
         delay: 5000,          
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
