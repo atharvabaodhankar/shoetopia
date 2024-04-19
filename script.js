@@ -7,23 +7,6 @@ hamburger.addEventListener("click", () => {
   navbar.classList.toggle("active");
   })
 
-window.addEventListener('scroll', function () {
-  var sampleSection = document.querySelector('#sample');
-  var rect = sampleSection.getBoundingClientRect();
-    if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
-      navbar.classList.add('sticky-bar');
-      swiperHero.style.marginTop = '8rem';
-    }
-    else
-  {
-    navbar.classList.remove('sticky-bar');
-    swiperHero.style.marginTop = '0';
-      
-      }
-});
-
-
-
 var swiper = new Swiper(".hero-swiper", {
     autoplay: {
         enabled: true,
@@ -33,3 +16,23 @@ var swiper = new Swiper(".hero-swiper", {
       },
     loop: true,
 });
+
+gsap.to(".products-main", {
+  scrollTrigger: {
+      trigger: ".products-main",
+      scroller: "body",
+      start: "top 100%",
+      scrub:4 ,
+  },
+  backgroundPosition : "1% 1%"
+})
+gsap.to(".products h1", {
+  scrollTrigger: {
+      trigger: ".products-main",
+      scroller: "body",
+      start: "top 100%",
+      scrub:4 ,
+  },
+  opacity : 2,
+  y : "-10%",
+})
