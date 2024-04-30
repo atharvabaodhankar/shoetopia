@@ -7,13 +7,14 @@ hamburger.addEventListener("click", () => {
   navbar.classList.toggle("active");
   })
 
-var swiper = new Swiper(".hero-swiper", {
+var swiper = new Swiper(".swiper", {
     autoplay: {
         enabled: true,
         delay: 5000,          
         pauseOnMouseEnter: true,
         disableOnInteraction: false,
-      },
+  },
+  grabCursor : true,
     loop: true,
 });
 
@@ -35,4 +36,27 @@ gsap.to(".products h1", {
   },
   opacity : 2,
   y : "-10%",
+})
+
+gsap.from(".aboutus-img", {
+  x: -100,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".aboutus-img",
+    scroller: "body",
+    start: "top 100%",
+    end : "100% 60%",
+    scrub: 4,
+  },
+})
+gsap.from(".aboutus-box", {
+  x: 100,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".aboutus-img",
+    scroller: "body",
+    start: "top 100%",
+    end : "100% 30%",
+    scrub: 1,
+  },
 })
