@@ -45,7 +45,7 @@ gsap.from(".aboutus-img", {
     trigger: ".aboutus-img",
     scroller: "body",
     start: "top 100%",
-    end : "100% 60%",
+    end : "100% 90%",
     scrub: 4,
   },
 })

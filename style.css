@@ -497,6 +497,9 @@ nav ul li a {
         font-size: 4vw;
         width: 80%;
     }
+    #footer{
+        flex-wrap: wrap;
+    }
 }
 @media screen and (max-width: 768px) {
     nav ul {
@@ -570,7 +573,16 @@ nav ul li a {
         .aboutus-img{
             width: 90vw;
         }
-
+        #footer{
+            flex-direction: column;
+        }
+        .footer{
+            width: 90%;
+        }
+        .contact{
+            margin-top: 4rem;
+            width: 90%;
+        }
 }
 
 @media screen and (max-width: 600px) {
@@ -585,5 +597,8 @@ nav ul li a {
     }
     .aboutus-box h1 {
         font-size: 3rem;
+    }
+    .contact-box input {
+        width: 200px;
     }
 }
