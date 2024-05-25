@@ -60,3 +60,26 @@ gsap.from(".aboutus-box", {
     scrub: 1,
   },
 })
+
+gsap.from(".footer", {
+  x: -100,
+  opacity:0,
+  duration:1,
+  scrollTrigger: {
+    trigger: ".footer",
+    scroller: "body",
+    start: "top 80%",
+    end : "",
+  }
+})
+gsap.from(".contact", {
+  x: 100,
+  opacity:0,
+  duration:1,
+  scrollTrigger: {
+    trigger: ".footer",
+    scroller: "body",
+    start: "top 80%",
+    end: "",
+  }
+})
