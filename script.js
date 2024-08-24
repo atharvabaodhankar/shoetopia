@@ -1,85 +1,93 @@
-var navbar = document.querySelector("nav");
-var swiperHero = document.querySelector(".swiper-hero");
-var hamburger = document.querySelector(".toggle-bar");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navbar.classList.toggle("active");
-  })
-
-var swiper = new Swiper(".swiper", {
-    autoplay: {
-        enabled: true,
-        delay: 5000,          
-        pauseOnMouseEnter: true,
-        disableOnInteraction: false,
-  },
-  grabCursor : true,
-    loop: true,
+const lenis = new Lenis({
+  lerp: 0.05,
 });
 
-gsap.to(".products-main", {
-  scrollTrigger: {
-      trigger: ".products-main",
-      scroller: "body",
-      start: "top 100%",
-      scrub:4 ,
-  },
-  backgroundPosition : "1% 1%"
-})
-gsap.to(".products h1", {
-  scrollTrigger: {
-      trigger: ".products-main",
-      scroller: "body",
-      start: "top 100%",
-      scrub:4 ,
-  },
-  opacity : 2,
-  y : "-10%",
-})
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
 
-gsap.from(".aboutus-img", {
-  x: -100,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".aboutus-img",
-    scroller: "body",
-    start: "top 100%",
-    end : "100% 90%",
-    scrub: 4,
-  },
-})
-gsap.from(".aboutus-box", {
-  x: 100,
-  duration: 1,
-  scrollTrigger: {
-    trigger: ".aboutus-img",
-    scroller: "body",
-    start: "top 100%",
-    end : "100% 30%",
-    scrub: 1,
-  },
-})
+requestAnimationFrame(raf);
 
-gsap.from(".footer", {
-  x: -100,
-  opacity:0,
-  duration:1,
-  scrollTrigger: {
-    trigger: ".footer",
-    scroller: "body",
-    start: "top 80%",
-    end : "",
+// Navbar
+
+Ferro.button(".n-btn");
+Ferro.textUnderline(".n-close");
+
+var openBtn = document.querySelector(".n-menu");
+var closeBtn = document.querySelector(".n-close");
+var navBar = document.querySelector("#navbar");
+var navMain = document.querySelector(".nav-main");
+
+openBtn.addEventListener("click", () => {
+  navBar.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  navBar.classList.remove("active");
+});
+var lastScroll = 0;
+window.addEventListener("scroll", (win) => {
+  var currectY = window.scrollY;
+
+  if (currectY <= 0) {
+    navMain.classList.remove("is-down");
   }
-})
-gsap.from(".contact", {
-  x: 100,
-  opacity:0,
-  duration:1,
-  scrollTrigger: {
-    trigger: ".footer",
-    scroller: "body",
-    start: "top 80%",
-    end: "",
+  if (currectY > lastScroll && !navMain.classList.contains("is-down")) {
+    navMain.classList.add("is-down");
   }
-})
+
+  if (currectY < lastScroll && navMain.classList.contains("is-down")) {
+    navMain.classList.remove("is-down");
+  }
+
+  lastScroll = currectY;
+});
+
+Ferro.textUnderline(".underline");
+
+var swiper = new Swiper(".swiper-container-h", {
+  speed: 1500,
+  autoplay: {
+    delay: 20000,
+  },
+  parallax: true,
+  loop: true,
+
+  on: {
+    init: function () {
+      var swiper = this;
+      for (var i = 0; i < swiper.slides.length; i++) {
+        $(swiper.slides[i])
+          .find(".slide-bg ")
+          .attr({
+            "data-swiper-parallax": 0.75 * swiper.width,
+          });
+      }
+    },
+    resize: function () {
+      this.update();
+    },
+  },
+
+  pagination: {
+    el: ".creative-showcase--slider .swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return (
+        '<span class="' +
+        className +
+        '">' +
+        '<svg class="fp-arc-loader" width="16" height="16" viewBox="0 0 16 16">' +
+        '<circle class="path" cx="8" cy="8" r="5.5" fill="none" transform="rotate(-90 8 8)" stroke="#FFF"' +
+        'stroke-opacity="1" stroke-width="1px"></circle>' +
+        '<circle cx="8" cy="8" r="3" fill="#FFF"></circle>' +
+        "</svg></span>"
+      );
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

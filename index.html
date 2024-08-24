@@ -1,219 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home || Shoetopia</title>
+    <title>Shoetopia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/atharvabaodhankar/ferro.js@master/ferro.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <section id="hero">
 
-        <nav class="nav">
-            <div class="logo">
-                ShoeTopia
+    <section id="main">
+        <div id="navbar" class="flex">
+            <div class="n-close underline">
+                Close
             </div>
-            <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">AboutUs</a>
-                </li>
-                <li>
-                    <a href="#">Testimonials</a>
-                </li>
-                <li>
-                    <a href="#">ContactUs</a>
-                </li>
+            <ul class="flex flex-c navbar-ul">
+                <div class="flex flex-c">
+                    <div class="n-btn-outer" data-name="HOME">
+                        <li class="n-btn"><a href="#">HOME</a></li>
+                    </div>
+                    <div class="n-btn-outer" data-name="PRODUCTS">
+                        <li class="n-btn"><a href="#">PRODUCTS</a></li>
+                    </div>
+                    <div class="n-btn-outer" data-name="ABOUTUS">
+                        <li class="n-btn"><a href="#">ABOUTUS</a></li>
+                    </div>
+                    <div class="n-btn-outer" data-name="CONTACTUS">
+                        <li class="n-btn"><a href="#">CONTACTUS</a></li>
+                    </div>
+
+                </div>
             </ul>
-            <label class="toggle-bar">
-                <div class="bars" id="bar1"></div>
-                <div class="bars" id="bar2"></div>
-                <div class="bars" id="bar3"></div>
-            </label>
-        </nav>
-   
-            <div class="swiper hero-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="swiper-slide-img">
-                            <img src="./banner/hero1.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide-text">
-                            <h1>Shoetopia</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis minima est et magni corrupti. Laborum enim et expedita, placeat quisquam amet nulla omnis, repellendus dicta eos perferendis eveniet non consequuntur.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="swiper-slide-img">
-                            <img src="./banner/hero2.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide-text">
-                            <h1>Shoetopia</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis minima est et magni corrupti. Laborum enim et expedita, placeat quisquam amet nulla omnis, repellendus dicta eos perferendis eveniet non consequuntur.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="swiper-slide-img">
-                            <img src="./banner/hero3.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide-text">
-                            <h1>Shoetopia</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis minima est et magni corrupti. Laborum enim et expedita, placeat quisquam amet nulla omnis, repellendus dicta eos perferendis eveniet non consequuntur.</p>
-                        </div>
-                    </div>                  
+        </div>
+        <section id="hero">
+            <div class="nav-main">
+                <div class="logo">
+                    <h1 class="underline">Shoetopia</h1>
                 </div>
+                <div class="n-menu underline">
+                    Menu
+                </div>
+
             </div>
-       
+            <section class="creative-showcase--slider">
+                <div class="banner-horizental">
+                  <div class="swiper swiper-container-h">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="slide-bg overlay-dark" style="background-image: url(https://images.unsplash.com/photo-1485736231968-0c8ad5c9e174?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);" data-swiper-parallax="1152">
+                          <div class="slide-container">
+                            <div class="slide-row">
+                              <div class="slider-content">
+                                <h6 class="slide-subtitle" data-swiper-parallax="-1000">© Creative Salahu</h6>
+                                <h1 class="slide-heading" data-swiper-parallax="-2000"> <a href="https://www.fiverr.com/aliali44"><span>Retouch Photo</span></a> </h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide-bg overlay-dark" style="background-image: url(https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);" data-swiper-parallax="1152">
+                          <div class="slide-container">
+                            <div class="slide-row">
+                              <div class="slider-content">
+                                <h6 class="slide-subtitle" data-swiper-parallax="-1000">© Creative Salahu</h6>
+                                <h1 class="slide-heading"> <a href="https://www.fiverr.com/aliali44">
+                                    <span data-swiper-parallax="-2000">Earthmade</span>
+                                    <br>
+                                    <span data-swiper-parallax="-3000">Aroma box</span>
+                                  </a> </h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide-bg overlay-light" style="background-image: url(https://images.unsplash.com/photo-1526529095979-5c102cfe09cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);" data-swiper-parallax="1152">
+                          <div class="slide-container">
+                            <div class="slide-row">
+                              <div class="slider-content">
+                                <h6 class="slide-subtitle" data-swiper-parallax="-1000">© Creative Salahu</h6>
+                                <h1 class="slide-heading"> <a href="https://www.fiverr.com/aliali44">
+                                    <span data-swiper-parallax="-2000">Access Bank</span>
+                                    <br>
+                                    <span data-swiper-parallax="-3000">Rebranding</span>
+                                  </a> </h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide-bg overlay-dark" style="background-image: url(./banner/hero3.jpg);" data-swiper-parallax="1152">
+                          <div class="slide-container">
+                            <div class="slide-row">
+                              <div class="slider-content">
+                                <h6 class="slide-subtitle" data-swiper-parallax="-1000">© Creative Salahu</h6>
+                                <h1 class="slide-heading" data-swiper-parallax="-2000"> <a href="https://www.fiverr.com/aliali44"><span>The joy of music</span></a> </h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide-bg overlay-dark" style="background-image: url(./banner/hero2.jpg);" data-swiper-parallax="1152">
+                          <div class="slide-container">
+                            <div class="slide-row">
+                              <div class="slider-content">
+                                <h6 class="slide-subtitle" data-swiper-parallax="-1000">© Creative Salahu</h6>
+                                <h1 class="slide-heading" data-swiper-parallax="-2000"> <a href="https://www.fiverr.com/aliali44"><span>Blue Adobe MAX</span></a> </h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide-bg overlay-dark" style="background-image: url(https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);" data-swiper-parallax="1152">
+                          <div class="slide-container">
+                            <div class="slide-row">
+                              <div class="slider-content">
+                                <h6 class="slide-subtitle" data-swiper-parallax="-1000">© Creative Salahu</h6>
+                                <h1 class="slide-heading" data-swiper-parallax="-2000"> <a href="https://www.fiverr.com/aliali44"><span>Carved Wood</span></a> </h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="slide-bg overlay-dark" style="background-image: url(https://images.unsplash.com/photo-1547053295-bb530ab5af2c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);" data-swiper-parallax="1152">
+                          <div class="slide-container">
+                            <div class="slide-row">
+                              <div class="slider-content">
+                                <h6 class="slide-subtitle" data-swiper-parallax="-1000">© Creative Salahu</h6>
+                                <h1 class="slide-heading"> <a href="https://www.fiverr.com/aliali44">
+                                    <span data-swiper-parallax="-2000">Abstract</span>
+                                    <br>
+                                    <span data-swiper-parallax="-3000">Animation Video</span>
+                                  </a> </h1>
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-button-wrapper creative-button--wrapper">
+                      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide">
+                        <div>
+                          <span>Next Slide</span>
+                        </div>
+                        <div><i class="fas fa-chevron-right"></i></div>
+                      </div>
+                      <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide">
+                        <div><i class="fas fa-chevron-left"></i></div>
+                        <div>
+                          <span>Prev Slide</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination">
+                    </div>
+                  </div>
+                </div>
+              </section>
         </section>
-       <section id="items">
-        <div class="items-header header">
-            <h1>Our Products</h1>
-        </div>
-        <div class="items">
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Men’s Earth-Tone Sneaker.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
+        <section id="sample" style="background-color: rgb(12, 115, 115);">
 
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Men's Earth-Tone Sneaker</h3>
-                </div>
-            </div>
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Men’s Green Running.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
-
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Men’s Green Running</h3>
-                </div>
-            </div>
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Men’s Moonstone Sneaker.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
-
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Men’s Moonstone Sneaker</h3>
-                </div>
-            </div>
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Men’s Navy Running.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
-
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Men’s Navy Running</h3>
-                </div>
-            </div>
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Women’s Blue Training.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
-
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Women’s Blue Training</h3>
-                </div>
-            </div>
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Women’s Candy City Run.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
-
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Women’s Candy City Run</h3>
-                </div>
-            </div>
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Women’s Mint Sneaker.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
-
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Women’s Mint Sneaker</h3>
-                </div>
-            </div>
-            <div class="items-box">
-                <div class="items-img">
-                    <img src="shoes\Women’s Tosca City Run.jpg" alt="">
-                    <div class="items-hover">
-                    <h1>50$</h1>
-
-                    </div>
-                </div>
-                <div class="items-desc">
-                    <h3>Women's Tosca City Run</h3>
-                </div>
-            </div>
-        </div>
-       </section>
-    <section id="products">
-        <div class="products-main">
-            <div class="products">
-                <h1>Get <span>50%</span>off on our special occasion.</h1>
-            </div>
-        </div>
-
+        </section>
     </section>
-    <section id="aboutus">
-        <div class="aboutus-img">
-            <img src="banner/aboutus.jpg" alt="">
-        </div>
-        <div class="aboutus-box">
-            <h1>About Us</h1>
-            <p>Shoetopia is your ultimate destination for all things footwear! We are passionate about shoes and committed to bringing you the latest trends, styles, and comfort. Whether you're looking for sneakers, boots, sandals, or heels, we've got you covered with a wide selection of high-quality footwear for every occasion. Our mission is to provide you with the perfect pair of shoes that not only look great but also feel great on your feet. With Shoetopia, you can step out in style and confidence, knowing that you're wearing the best shoes in town!</p>
-            <a href="#" class="explore-btn">Explore More</a>
-        </div>
-    </section>
-    <section id="footer">
-        <div class="footer">
-            <h1>ShoeTopia</h1>
-            <p>
-                Thank you for choosing Shoetopia, your ultimate footwear destination! Discover the latest trends, unmatched comfort, and high-quality shoes for every occasion. Step out in style and confidence with the perfect pair from Shoetopia!</p>
-        </div>
-        <div class="contact">
-            <div class="contact-box">
-                <input type="text" placeholder="Your Email">
-                <i class="fa-solid fa-paper-plane"></i>
-            </div>
-        </div>
-    </section>
-  
-    
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Smooth Scroller -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Swiper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/atharvabaodhankar/ferro.js@master/ferro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
