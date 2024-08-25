@@ -9,6 +9,21 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+gsap.to(".creative-showcase--slider", {
+  scrollTrigger: {
+    trigger: "#hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+  borderRadius: "0 0 12% 12%",
+  overflow: "hidden",
+  scale: function () {
+    return window.innerWidth > 900 ? 0.7 : 1;
+  },
+  duration: 2,
+});
+
 // Navbar
 
 Ferro.button(".n-btn");
@@ -32,9 +47,11 @@ window.addEventListener("scroll", (win) => {
 
   if (currectY <= 0) {
     navMain.classList.remove("is-down");
+    navMain.classList.remove("color");
   }
   if (currectY > lastScroll && !navMain.classList.contains("is-down")) {
     navMain.classList.add("is-down");
+    navMain.classList.add("color");
   }
 
   if (currectY < lastScroll && navMain.classList.contains("is-down")) {
@@ -49,7 +66,7 @@ Ferro.textUnderline(".underline");
 var swiper = new Swiper(".swiper-container-h", {
   speed: 1500,
   autoplay: {
-    delay: 20000,
+    delay: 4000,
   },
   parallax: true,
   loop: true,
@@ -58,32 +75,51 @@ var swiper = new Swiper(".swiper-container-h", {
     init: function () {
       var swiper = this;
       for (var i = 0; i < swiper.slides.length; i++) {
-        $(swiper.slides[i])
-          .find(".slide-bg ")
-          .attr({
-            "data-swiper-parallax": 0.75 * swiper.width,
-          });
+        var slideBg = swiper.slides[i].querySelector(".slide-bg");
+        slideBg.setAttribute("data-swiper-parallax", 0.75 * swiper.width);
       }
     },
     resize: function () {
       this.update();
     },
   },
-
   pagination: {
     el: ".creative-showcase--slider .swiper-pagination",
     clickable: true,
     renderBullet: function (index, className) {
-      return (
-        '<span class="' +
-        className +
-        '">' +
-        '<svg class="fp-arc-loader" width="16" height="16" viewBox="0 0 16 16">' +
-        '<circle class="path" cx="8" cy="8" r="5.5" fill="none" transform="rotate(-90 8 8)" stroke="#FFF"' +
-        'stroke-opacity="1" stroke-width="1px"></circle>' +
-        '<circle cx="8" cy="8" r="3" fill="#FFF"></circle>' +
-        "</svg></span>"
+      var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("class", className);
+      svg.setAttribute("width", "16");
+      svg.setAttribute("height", "16");
+      svg.setAttribute("viewBox", "0 0 16 16");
+
+      var circle1 = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle"
       );
+      circle1.setAttribute("class", "path");
+      circle1.setAttribute("cx", "8");
+      circle1.setAttribute("cy", "8");
+      circle1.setAttribute("r", "5.5");
+      circle1.setAttribute("fill", "none");
+      circle1.setAttribute("transform", "rotate(-90 8 8)");
+      circle1.setAttribute("stroke", "#FFF");
+      circle1.setAttribute("stroke-opacity", "1");
+      circle1.setAttribute("stroke-width", "1px");
+
+      var circle2 = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "circle"
+      );
+      circle2.setAttribute("cx", "8");
+      circle2.setAttribute("cy", "8");
+      circle2.setAttribute("r", "3");
+      circle2.setAttribute("fill", "#FFF");
+
+      svg.appendChild(circle1);
+      svg.appendChild(circle2);
+
+      return svg;
     },
   },
   navigation: {
@@ -91,3 +127,81 @@ var swiper = new Swiper(".swiper-container-h", {
     prevEl: ".swiper-button-prev",
   },
 });
+var swiperProduct1 = new Swiper(".mySwiper", {
+  slidesPerView: 4.5,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+    reverseDirection: true,
+  },
+  speed: 1400,
+  spaceBetween: 30,
+  loop: true,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    1400: {
+      slidesPerView: 4,
+    },
+    700: {
+      slidesPerView: 3,
+    },
+    600: {
+      slidesPerView: 3,
+    },
+    300: {
+      slidesPerView: 1.5,
+    },
+    0: {
+      slidesPerView: 1.5,
+    },
+  },
+});
+var swiperProduct2 = new Swiper(".mySwiper2", {
+  slidesPerView: 4.5,
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+    reverseDirection: false,
+  },
+  speed: 1400,
+  spaceBetween: 30,
+  loop: true,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    1400: {
+      slidesPerView: 4,
+    },
+    700: {
+      slidesPerView: 3,
+    },
+    600: {
+      slidesPerView: 3,
+    },
+    300: {
+      slidesPerView: 1.5,
+    },
+    0: {
+      slidesPerView: 1.5,
+    },
+  },
+});
+
+gsap.from("#products", {
+  scrollTrigger: {
+    trigger: "#products",
+    start: "top bottom",
+    end: "top center",
+    scrub: true,
+  },
+  scale : 0.5
+})
