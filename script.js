@@ -203,5 +203,37 @@ gsap.from("#products", {
     end: "top center",
     scrub: true,
   },
-  scale : 0.5
-})
+  scale: 0.5,
+});
+
+var pCloseBtn = document.querySelector(".p-close");
+
+pCloseBtn.addEventListener("click", function () {
+  gsap.to(".product-show", {
+    opacity: 0,
+    duration: 0.5,
+    onComplete: function () {
+      document.querySelector(".product-show").style.display = "none";
+    },
+  });
+});
+var productBoxs = document.querySelectorAll(".product-box");
+var productShow = document.querySelector(".product-show");
+productBoxs.forEach((productBox) => {
+  productBox.addEventListener("click", function () {
+    let img = productBox.querySelector(".product-img img").getAttribute("src");
+    document.querySelector(".p-show-img img").setAttribute("src", img);
+    document.querySelector(".product-show").style.display = "grid";
+    productShow.querySelector(".p-show-desc h1").innerHTML =
+      productBox.querySelector(".product-desc h3").innerHTML;
+    productShow.querySelector(".p-show-desc h3").innerHTML =
+      productBox.querySelector(".product-hover h1").innerHTML;
+
+    gsap.to(".product-show", {
+      opacity: 1,
+      duration: 0.5,
+    });
+  });
+});
+
+Ferro.frame(".p-show-img", "var(--coral)", "4s", "10px", "ease-in-out");
