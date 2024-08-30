@@ -84,7 +84,7 @@ img {
 #sample {
     width: 100%;
     height: 100vh;
-    background-color: #F2F2F2;
+    /* background-color: #F2F2F2; */
 }
 
 html.lenis, html.lenis body {
@@ -624,6 +624,40 @@ img {
     }
 }
 
+/* Offers */
+#offer {
+    width: 100%;
+    background-image: url(./banner/banner3.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.offer {
+    width: 100%;
+}
+
+.offer-box {
+    text-align: center;
+    font-size: 4vw;
+    overflow: hidden;
+    padding: 3rem;
+
+    h1 {
+        font-family: Baunk;
+        color: var(--white);
+
+        span {
+            font-family: Baunk;
+
+            b {
+                color: var(--coral);
+                font-family: Baunk;
+            }
+
+        }
+    }
+}
 
 /* Media Query */
 
@@ -649,6 +683,10 @@ img {
     .p-show-img {
         width: 45%;
         height: auto;
+    }
+
+    .offer-box {
+        font-size: 6vw;
     }
 }
 
@@ -737,15 +775,19 @@ img {
         padding: 4vw;
         text-align: center;
     }
+
     .p-show-img {
         width: 80%;
     }
+
     .p-show-desc h1 {
         font-size: 8vw;
     }
+
     .p-show-desc h3 {
         font-size: 7vw;
     }
+
     .p-show-desc {
         overflow-y: scroll;
     }
@@ -758,5 +800,9 @@ img {
 
     .h1 {
         font-size: 9vw;
+    }
+
+    .offer-box {
+        font-size: 7vw;
     }
 }

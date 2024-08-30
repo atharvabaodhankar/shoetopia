@@ -61,6 +61,7 @@ window.addEventListener("scroll", (win) => {
   lastScroll = currectY;
 });
 
+
 Ferro.textUnderline(".underline");
 
 var swiper = new Swiper(".swiper-container-h", {
@@ -237,3 +238,29 @@ productBoxs.forEach((productBox) => {
 });
 
 Ferro.frame(".p-show-img", "var(--coral)", "4s", "10px", "ease-in-out");
+
+gsap.to("#offer", {
+  scrollTrigger: {
+    trigger: "#offer",
+    scroller : "body",
+    start: "top bottom",
+    scrub: true,
+  },
+  backgroundPosition: "100% 0%",
+})
+
+gsap.from(".offer-box h1 span", {
+  scrollTrigger: {
+    trigger: "#offer",
+    scroller : "body",
+    start: "top center",
+    end: "center center",
+    scrub: true,
+  },
+  stagger :1,
+  skewX: 30,
+  rotateY : 20,
+  opacity : 0,
+  y : 50,
+  duration: 10,
+})
