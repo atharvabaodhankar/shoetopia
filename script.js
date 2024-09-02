@@ -61,7 +61,6 @@ window.addEventListener("scroll", (win) => {
   lastScroll = currectY;
 });
 
-
 Ferro.textUnderline(".underline");
 
 var swiper = new Swiper(".swiper-container-h", {
@@ -242,25 +241,76 @@ Ferro.frame(".p-show-img", "var(--coral)", "4s", "10px", "ease-in-out");
 gsap.to("#offer", {
   scrollTrigger: {
     trigger: "#offer",
-    scroller : "body",
+    scroller: "body",
     start: "top bottom",
     scrub: true,
   },
   backgroundPosition: "100% 0%",
-})
+});
 
 gsap.from(".offer-box h1 span", {
   scrollTrigger: {
     trigger: "#offer",
-    scroller : "body",
+    scroller: "body",
     start: "top center",
     end: "center center",
     scrub: true,
   },
-  stagger :1,
+  stagger: 1,
   skewX: 30,
-  rotateY : 20,
-  opacity : 0,
-  y : 50,
+  rotateY: 20,
+  opacity: 0,
+  y: 50,
   duration: 10,
-})
+});
+
+Ferro.cardShow(".services-box", 8, 1);
+
+function heading(selector) {
+  let headings = document.querySelectorAll(selector);
+
+  headings.forEach((heading) => {
+    let characters = heading.textContent.split("");
+    let combined = "";
+    characters.forEach((char) => {
+      if (char === " ")
+        combined += `<span>&nbsp;</span>`;
+      else
+      combined += `<span>${char}</span>`;
+    })
+    heading.innerHTML = combined;
+    let spans = heading.querySelectorAll("span");
+    let mid = spans.length / 2;
+    spans.forEach((ele, idx) => {
+      if (idx < mid) ele.classList.add("left");
+      else ele.classList.add("right");
+    });
+
+    gsap.from(`${selector} span.left`, {
+      y: 100,
+      duration: 1.5,
+      stagger: -0.1,
+      opacity: 0,
+      delay : 0.5,
+      delay: 0.5,
+      ease: "elastic",
+      scrollTrigger: {
+          trigger: heading,
+      },
+  });
+  gsap.from(`${selector} span.right`, {
+      y: 100,
+      duration: 1.5,
+      stagger: 0.1,
+      opacity: 0,
+      delay : 0.5,
+      delay: 0.5,
+      ease: "elastic",
+      scrollTrigger: {
+          trigger: heading,
+      },
+  });
+  });
+}
+
+heading(".h1");

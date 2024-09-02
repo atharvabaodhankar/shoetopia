@@ -34,6 +34,9 @@ p {
     font-size: 4vw;
     font-family: Baunk;
     color: var(--teal);
+    span{
+    font-family: Baunk;
+    }
 }
 
 .h2 {
@@ -658,6 +661,94 @@ img {
         }
     }
 }
+/* Services */
+.services{
+    padding: 7rem 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.services-box{
+    width: 300px;
+    margin: 3rem 1.5rem;
+    flex-direction: column;
+    height: 250px;
+    text-align: center;
+    gap: 1.5rem;
+    position: relative;
+    cursor: pointer;
+}
+.services-box div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.services-box div::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: var(--teal);
+    transform: scale(0.4);
+    left: calc(100% - 150px);
+    top: calc(100% - 150px);
+    z-index: -1;
+    border-radius: 50%;
+    transition: all 0.5s ease-out;
+}
+.services-box:hover {
+    color: var(--white);
+    i{
+        color: var(--white);
+    }
+}
+.services-box:hover div::before{
+    transform: scale(2.9);
+}
+.services-box::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+    opacity: 0.3;
+    z-index: 1;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+.services-box:hover::after{
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+    opacity: 0.7;
+}
+.services-box i{
+    font-size: 5vw;
+    color: var(--teal);
+    transition: all 0.3s ease-in-out;
+}
+.services-box h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+.services-box p{
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+.services-header{
+    width: 90%;
+}
 
 /* Media Query */
 
@@ -791,6 +882,12 @@ img {
     .p-show-desc {
         overflow-y: scroll;
     }
+    .services-box{
+        height: 200px;
+    }
+    .services-box i {
+        font-size: 7vw;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -804,5 +901,14 @@ img {
 
     .offer-box {
         font-size: 7vw;
+    }
+    .services-box {
+        width: 90%;
+    }
+    .services-box i {
+        font-size: 15vw;
+    }
+    .services-box div::before {
+        transform: scale(0.3);
     }
 }
