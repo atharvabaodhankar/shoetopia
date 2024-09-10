@@ -242,10 +242,10 @@ gsap.to("#offer", {
   scrollTrigger: {
     trigger: "#offer",
     scroller: "body",
-    start: "top bottom",
-    scrub: true,
+    start: "top 100%",
+    scrub: 4,
   },
-  backgroundPosition: "100% 0%",
+  backgroundPosition: "0% -80%",
 });
 
 gsap.from(".offer-box h1 span", {
@@ -273,11 +273,9 @@ function heading(selector) {
     let characters = heading.textContent.split("");
     let combined = "";
     characters.forEach((char) => {
-      if (char === " ")
-        combined += `<span>&nbsp;</span>`;
-      else
-      combined += `<span>${char}</span>`;
-    })
+      if (char === " ") combined += `<span>&nbsp;</span>`;
+      else combined += `<span>${char}</span>`;
+    });
     heading.innerHTML = combined;
     let spans = heading.querySelectorAll("span");
     let mid = spans.length / 2;
@@ -291,25 +289,25 @@ function heading(selector) {
       duration: 1.5,
       stagger: -0.1,
       opacity: 0,
-      delay : 0.5,
+      delay: 0.5,
       delay: 0.5,
       ease: "elastic",
       scrollTrigger: {
-          trigger: heading,
+        trigger: heading,
       },
-  });
-  gsap.from(`${selector} span.right`, {
+    });
+    gsap.from(`${selector} span.right`, {
       y: 100,
       duration: 1.5,
       stagger: 0.1,
       opacity: 0,
-      delay : 0.5,
+      delay: 0.5,
       delay: 0.5,
       ease: "elastic",
       scrollTrigger: {
-          trigger: heading,
+        trigger: heading,
       },
-  });
+    });
   });
 }
 

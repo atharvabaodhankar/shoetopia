@@ -631,7 +631,7 @@ img {
 #offer {
     width: 100%;
     background-image: url(./banner/banner3.jpg);
-    background-position: 50% 50%;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
