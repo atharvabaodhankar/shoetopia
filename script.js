@@ -267,48 +267,81 @@ gsap.from(".offer-box h1 span", {
 Ferro.cardShow(".services-box", 8, 1);
 
 function heading(selector) {
-  let headings = document.querySelectorAll(selector);
+  let heading = document.querySelector(selector);
 
-  headings.forEach((heading) => {
-    let characters = heading.textContent.split("");
-    let combined = "";
-    characters.forEach((char) => {
-      if (char === " ") combined += `<span>&nbsp;</span>`;
-      else combined += `<span>${char}</span>`;
-    });
-    heading.innerHTML = combined;
-    let spans = heading.querySelectorAll("span");
-    let mid = spans.length / 2;
-    spans.forEach((ele, idx) => {
-      if (idx < mid) ele.classList.add("left");
-      else ele.classList.add("right");
-    });
+  let characters = heading.textContent.split("");
+  let combined = "";
+  characters.forEach((char) => {
+    if (char === " ") combined += `<span>&nbsp;</span>`;
+    else combined += `<span>${char}</span>`;
+  });
+  heading.innerHTML = combined;
+  let spans = heading.querySelectorAll("span");
+  let mid = spans.length / 2;
+  spans.forEach((ele, idx) => {
+    if (idx < mid) ele.classList.add("left");
+    else ele.classList.add("right");
+  });
 
-    gsap.from(`${selector} span.left`, {
-      y: 100,
-      duration: 1.5,
-      stagger: -0.1,
-      opacity: 0,
-      delay: 0.5,
-      delay: 0.5,
-      ease: "elastic",
-      scrollTrigger: {
-        trigger: heading,
-      },
-    });
-    gsap.from(`${selector} span.right`, {
-      y: 100,
-      duration: 1.5,
-      stagger: 0.1,
-      opacity: 0,
-      delay: 0.5,
-      delay: 0.5,
-      ease: "elastic",
-      scrollTrigger: {
-        trigger: heading,
-      },
-    });
+  gsap.from(`${selector} span.left`, {
+    y: 100,
+    duration: 1.5,
+    stagger: -0.1,
+    opacity: 0,
+    delay: 0.5,
+    delay: 0.5,
+    ease: "elastic",
+    scrollTrigger: {
+      trigger: heading,
+    },
+  });
+  gsap.from(`${selector} span.right`, {
+    y: 100,
+    duration: 1.5,
+    stagger: 0.1,
+    opacity: 0,
+    delay: 0.5,
+    delay: 0.5,
+    ease: "elastic",
+    scrollTrigger: {
+      trigger: heading,
+    },
   });
 }
 
-heading(".h1");
+heading(".products-header h1");
+heading(".services-header h1");
+heading(".aboutus-desc h1");
+Ferro.imgShift(".aboutus-img");
+
+var foot = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".simg",
+    scroller: "body",
+    start: "center bottom",
+    end: "top top",
+    scrub: 3,
+  },
+})
+
+foot.to(".simg", {
+ 
+  clipPath: "circle(60% at 0% 100%)",
+});
+foot.to(".simg", {
+ 
+  clipPath: "circle(150% at 0% 0%)",
+});
+ 
+gsap.from("#slogan h1 div", {
+  yPercent: 80,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#slogan",
+    scroller: "body",
+    start: "center bottom",
+    end: "top center",
+    scrub: 3,
+  },
+})
+
