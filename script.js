@@ -264,7 +264,19 @@ gsap.from(".offer-box h1 span", {
   duration: 10,
 });
 
-Ferro.cardShow(".services-box", 8, 1);
+gsap.from(".services-box", {
+  scrollTrigger: {
+    trigger: "#services",
+    scroller: "body",
+    start: "top 100%",
+    end: "top 0%",
+    scrub: 4,
+  },
+  opacity: 0,
+  y: 50,
+  duration: 10,
+  stagger: 2,
+})
 
 function heading(selector) {
   let heading = document.querySelector(selector);
@@ -365,7 +377,6 @@ gsap.from(".footer-boxs", {
     scroller: "body",
     start: "top bottom",
     end: "top 80%",
-    markers : true,
     scrub: 3,
   },
   opacity: 0,
