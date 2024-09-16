@@ -322,17 +322,15 @@ var foot = gsap.timeline({
     end: "top top",
     scrub: 3,
   },
-})
+});
 
 foot.to(".simg", {
- 
   clipPath: "circle(60% at 0% 100%)",
 });
 foot.to(".simg", {
- 
   clipPath: "circle(150% at 0% 0%)",
 });
- 
+
 gsap.from("#slogan h1 div", {
   yPercent: 80,
   opacity: 0,
@@ -343,5 +341,34 @@ gsap.from("#slogan h1 div", {
     end: "top center",
     scrub: 3,
   },
-})
+});
+var footerTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#footer-logo",
+    scroller: "body",
+    start: "top top",
+    end: "+300% top",
+    pin: true,
+    scrub: 3,
+  },
+});
+footerTL.to(".footer-logo", {
+  xPercent: -110,
+},'a');
+footerTL.to(".footer-logo h1", {
+    backgroundPosition: "-50% 0",
+}, 'a')
 
+gsap.from(".footer-boxs", {
+  scrollTrigger: {
+    trigger: "#footer",
+    scroller: "body",
+    start: "top bottom",
+    end: "top 80%",
+    markers : true,
+    scrub: 3,
+  },
+  opacity: 0,
+  y: 100,
+  stagger: 0.5,
+})
