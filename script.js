@@ -276,7 +276,7 @@ gsap.from(".services-box", {
   y: 50,
   duration: 10,
   stagger: 2,
-})
+});
 
 function heading(selector) {
   let heading = document.querySelector(selector);
@@ -364,12 +364,20 @@ var footerTL = gsap.timeline({
     scrub: 3,
   },
 });
-footerTL.to(".footer-logo", {
-  xPercent: -110,
-},'a');
-footerTL.to(".footer-logo h1", {
+footerTL.to(
+  ".footer-logo",
+  {
+    xPercent: -110,
+  },
+  "a"
+);
+footerTL.to(
+  ".footer-logo h1",
+  {
     backgroundPosition: "-50% 0",
-}, 'a')
+  },
+  "a"
+);
 
 gsap.from(".footer-boxs", {
   scrollTrigger: {
@@ -382,4 +390,46 @@ gsap.from(".footer-boxs", {
   opacity: 0,
   y: 100,
   stagger: 0.5,
-})
+});
+
+var loaderTl = gsap.timeline();
+
+loaderTl.to(".loader img", {
+  duration: 1.5,
+  clipPath: "circle(100% at 50% 50%)",
+  ease: "none",
+});
+loaderTl.from(".loader h1", {
+  opacity: 0,
+  duration: 0.7,
+  skewX: 10,
+  ease: "power1.inOut",
+});
+
+loaderTl.fromTo(
+  ".loader",
+  {
+    clipPath: "circle(150% at 50% 50%)",
+  },
+  {
+    clipPath: "circle(0% at 50% 50%)",
+    duration: 1.5,
+    ease: "none",
+  },
+  "loader"
+);
+loaderTl.fromTo(
+  "#loader",
+  {
+    clipPath: "circle(150% at 50% 50%)",
+  },
+  {
+    clipPath: "circle(0% at 50% 50%)",
+    duration: 1.55,
+    ease: "none",
+    onComplete: function () {
+      document.querySelector("#loader").style.display = "none";
+    },
+  },
+  "loader"
+);

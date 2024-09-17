@@ -836,9 +836,11 @@ img {
 #footer-logo {
     overflow-x: scroll;
     height: 100vh;
+
     ::-webkit-scrollbar {
         display: none;
     }
+
     scrollbar-width: none;
 }
 
@@ -872,40 +874,81 @@ img {
         display: none;
     }
 }
+
 /* Footer */
-#footer{
+#footer {
     padding: 4rem 0;
     background-color: var(--teal);
 }
-.footer{
+
+.footer {
     width: 90%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     overflow: hidden;
 }
-.footer-left{
+
+.footer-left {
     text-align: left;
     width: 500px;
 }
-.footer h2{
+
+.footer h2 {
     color: #fff;
     font-family: Baunk;
 }
-.footer-left p{
+
+.footer-left p {
     color: #fff;
     margin: 1rem 0;
 }
-.footer .btn{
+
+.footer .btn {
     color: #fff;
     border: 2px solid #fff;
 }
-.footer-right{
+
+.footer-right {
     width: 500px;
     color: #fff;
 }
-.footer-right h2{
+
+.footer-right h2 {
     margin-bottom: 1rem;
+}
+
+/* Loader */
+#loader {
+    width: 100%;
+    height: 100%;
+    background-color: var(--teal);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.loader {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+    /* clip-path: circle(5% at 50% 50%); */
+}
+
+.loader h1 {
+    font-size: 8vw;
+    color: #2F6C5D;
+    font-family: Baunk;
+}
+
+.loader img {
+    width: 25vw;
 }
 
 /* Media Query */
@@ -926,13 +969,16 @@ img {
     .aboutus-desc {
         width: 420px;
     }
+
     .h2 {
         font-size: 3rem;
     }
-    .footer-left{
+
+    .footer-left {
         width: 40%;
     }
-    .footer-right{
+
+    .footer-right {
         width: 40%;
     }
 }
@@ -1010,22 +1056,27 @@ img {
     .n-close {
         font-size: 2rem;
     }
+
     #footer-logo {
         display: none;
     }
-    .footer{
+
+    .footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 3rem;
     }
-    .footer-left{
+
+    .footer-left {
         width: 100%;
     }
-    .footer-right{
+
+    .footer-right {
         margin-top: 3rem;
         width: 100%;
     }
+
     .h2 {
         font-size: 2.5rem;
     }
@@ -1142,6 +1193,12 @@ img {
     }
 
     #slogan h1 {
+        font-size: 10vw;
+    }
+    .loader img {
+        width: 45vw;
+    }
+    .loader h1 {
         font-size: 10vw;
     }
 }
