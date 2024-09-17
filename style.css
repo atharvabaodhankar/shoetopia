@@ -130,8 +130,8 @@ html.lenis, html.lenis body {
 
 .n-close {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 3rem;
+    right: 3rem;
     font-size: 3rem;
     z-index: 1000;
     cursor: pointer;
@@ -145,7 +145,7 @@ html.lenis, html.lenis body {
 #navbar {
     width: 10%;
     position: fixed;
-    height: 100vh;
+    height: 100%;
     left: -100%;
     bottom: 0;
     background-color: #fff;
@@ -163,12 +163,17 @@ html.lenis, html.lenis body {
     width: 100%;
     pointer-events: all;
 }
-
+.n-btn-outer{
+    height: 5vw !important;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
 .n-btn {
     font-size: 4vw;
     height: 5vw !important;
     margin: 2rem 0;
     cursor: pointer;
+    background-color: red;
     font-family: Baunk;
     color: var(--teal);
     position: relative;
@@ -235,6 +240,13 @@ html.lenis, html.lenis body {
         }
     }
 
+}
+.logo-img{
+    width: 50px;
+    filter: brightness(0) invert(1);
+    margin-right: 0.5rem ; 
+    /* filter: drop-shadow(0 0 0.2em #fff); */
+    
 }
 
 img {
@@ -1049,12 +1061,15 @@ img {
 
 @media screen and (max-width:900px) {
     .n-btn {
-        font-size: 7vw;
+        font-size: 8vw;
+        height: 8vw !important;
+    }
+    .n-btn-outer{
         height: 8vw !important;
     }
 
     .n-close {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     #footer-logo {

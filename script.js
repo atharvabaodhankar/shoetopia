@@ -60,6 +60,16 @@ window.addEventListener("scroll", (win) => {
 
   lastScroll = currectY;
 });
+var nBtns = document.querySelectorAll(".n-btn-outer");
+
+nBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    setTimeout(() => {
+      navBar.classList.remove("active");
+    },100)
+  });
+});
+
 
 Ferro.textUnderline(".underline");
 
